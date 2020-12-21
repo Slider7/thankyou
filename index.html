@@ -5,37 +5,165 @@
     <!--meta charset="utf-8"-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="all-css/bootstrap.css">
-    <link href="js/jquery-ui-custom2/jquery-ui.css" rel="stylesheet" type="text/css">    
-    <link rel="stylesheet" href="all-css/style.css" type="text/css">
-
     <title>Благодарности</title>
+
+    <style type="text/css">
+    	.ml4 {
+		  position: relative;
+		  font-weight: 700;
+		  font-size: 4.5em;
+		  margin-bottom: 175px;
+		}
+		.ml4 .letters {
+		  font-family: sans-serif;
+		  position: absolute;
+		  margin: auto;
+		  margin-top: 12px;
+		  left: 0;
+		  top: 0.3em;
+		  right: 0;
+		  opacity: 0; 
+		  color: aliceblue;
+		}
+
+		#container {
+		  position: relative;
+		}
+		#container canvas, #overlay {
+		  position: absolute;
+		}
+
+		#overlay{
+			width: 100vw;
+			text-align: center;
+			margin: auto 0;
+		}
+
+		.greetings-text{
+			color: aliceblue;
+			font-size: 1.5rem;
+		}
+		
+		hr{
+			width: 80vw;
+			margin: 30px auto;
+		}
+
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+
+		html, body {
+		  height: 100%;
+		}
+
+		body {
+		  overflow: hidden;
+		}
+
+		.wrapper {
+		  position: absolute;
+		  top: 370%;
+		  left: 50%;
+		  width: 400px;
+		  margin-left: -200px;
+		  font: 300 30px/1 'Open Sans Condensed', sans-serif;
+		  text-align: center;
+		  text-transform: uppercase;
+		  color: aliceblue;
+		  animation: 15s credits linear;
+		  animation-fill-mode: forwards;
+		}
+
+		.greet {
+		  margin-bottom: 40px;
+		  font-size: 40px;
+		}
+
+		.mentor {
+		  margin-bottom: 5px;
+		  font-size: 18px;
+		}
+
+		.job-name {
+		  margin-bottom: 32px;
+		  font-size: 24px;
+		}
+
+		@keyframes credits {
+		  0% {
+		    top: 350%;
+		  }
+		  100% {
+		    top: 95%;
+		  }
+		}
+    </style>
+
   </head>
   <body>
 
+<div id="container">
     <!--Для конфетти----------------->
     <canvas id="world"></canvas>
     <!------------------------------->
-  <div class="container-fluid">
+  <div id="overlay" class="container-fluid">
+  		<h1 class="ml4">
+		  <span class="letters letters-1">Менторы!</span>
+		  <span class="letters letters-2">Спасибо Вам!</span>
+		  <span class="letters letters-3">Вы - лучшие!</span>
+		</h1>
 
-  </div><!--Главный Контейнер-->
+		<hr />
+
+ 		<div class="greetings-text">
+			<div class='wrapper'>
+				<div class='greet'>Благодарности:</div>
+					<div class='mentor'>Владимир Токарев</div>
+					<div class='job-name'>Лекции, лайвкодинг и многое другое</div>
+					<div class='mentor'>Владимир Токарев</div>
+					<div class='job-name'>Лекции, лайвкодинг и многое другое</div>
+					<div class='mentor'>Владимир Токарев</div>
+					<div class='job-name'>Лекции, лайвкодинг и многое другое</div>
+					<div class='mentor'>Владимир Токарев</div>
+					<div class='job-name'>Лекции, лайвкодинг и многое другое</div>
+					<div class='mentor'>Владимир Токарев</div>
+					<div class='job-name'>Лекции, лайвкодинг и многое другое</div>
+					<div class='mentor'></div>
+					<div class='job-name'></div>
+					<div class='mentor'></div>
+					<div class='job-name'></div>
+					<div class='mentor'></div>
+					<div class='job-name'></div>
+					<div class='mentor'></div>
+					<div class='job-name'></div>
+					<div class='mentor'></div>
+					<div class='job-name'></div>
+					<div class='mentor'></div>
+				</div>
+			</div>
+
+
+		</div>
+
+  </div>
+
+</div>
+
+
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/jquery-ui-custom2/jquery-ui.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
     <script type="text/javascript">
 
       /*---------------C O N F E T T I-----------------------------------*/
         var mode = 1;
-  		var toast = '...пришел, прошел, но верится,\n что будут впереди \nденьки, что счастьем светятся,\nкак блестки конфетти...\n '
         function on_off(){
           mode = 1 - mode;
-            //if (mode) {alert(toast)};
         };
 
           (function() {
@@ -55,8 +183,8 @@
               window.h = 0;
 
               resizeWindow = function() {
-              window.w = canvas.width = window.innerWidth;
-              return window.h = canvas.height = window.innerHeight;
+              window.w = canvas.width = window.innerWidth-20;
+              return window.h = canvas.height = window.innerHeight-20;
               };
 
               window.addEventListener('resize', resizeWindow, false);
@@ -143,6 +271,9 @@
               var c, _i, _len, _results;
               requestAnimationFrame(step);
               context.clearRect(0, 0, w, h);
+              context.fillStyle = '#051021';
+			  context.fillRect(0, 0, w, h);
+
               _results = [];
               if (mode == 1){
               for (_i = 0, _len = confetti.length; _i < _len; _i++) {
@@ -158,9 +289,60 @@
               step();
           }).call(this);
     
+/*---------------ANIMATE LETTERS-----------------------------------*/
+		var ml4 = {};
+		ml4.opacityIn = [0,1];
+		ml4.scaleIn = [0.2, 1];
+		ml4.scaleOut = 3;
+		ml4.durationIn = 1500;
+		ml4.durationOut = 900;
+		ml4.delay = 1500;
+
+		anime.timeline({loop: true})
+		  .add({
+		    targets: '.ml4 .letters-1',
+		    opacity: ml4.opacityIn,
+		    scale: ml4.scaleIn,
+		    duration: ml4.durationIn
+		  }).add({
+		    targets: '.ml4 .letters-1',
+		    opacity: 0,
+		    scale: ml4.scaleOut,
+		    duration: ml4.durationOut,
+		    easing: "easeInExpo",
+		    delay: ml4.delay
+		  }).add({
+		    targets: '.ml4 .letters-2',
+		    opacity: ml4.opacityIn,
+		    scale: ml4.scaleIn,
+		    duration: ml4.durationIn
+		  }).add({
+		    targets: '.ml4 .letters-2',
+		    opacity: 0,
+		    scale: ml4.scaleOut,
+		    duration: ml4.durationOut,
+		    easing: "easeInExpo",
+		    delay: ml4.delay
+		  }).add({
+		    targets: '.ml4 .letters-3',
+		    opacity: ml4.opacityIn,
+		    scale: ml4.scaleIn,
+		    duration: ml4.durationIn
+		  }).add({
+		    targets: '.ml4 .letters-3',
+		    opacity: 0,
+		    scale: ml4.scaleOut,
+		    duration: ml4.durationOut,
+		    easing: "easeInExpo",
+		    delay: ml4.delay
+		  }).add({
+		    targets: '.ml4',
+		    opacity: 0,
+		    duration: 1500,
+		    delay: 1500
+		  });
 
     </script>
-    <script src="js/index.js"></script>  
 
   </body>
 </html>
