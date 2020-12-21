@@ -257,10 +257,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
     <script type="text/javascript">
+    	var pauseTime = 25000;
 
-    	setTimeout(()=>{showFinalGreet()}, 25000);
+    	if (screen.width < 600) pauseTime = 20000;
+    	setTimeout(()=>{showFinalGreet()}, pauseTime);
 
     	function showFinalGreet(){
+
     		document.querySelector(".ml4").style.visibility = "visible";
     	}
       /*---------------C O N F E T T I-----------------------------------*/
