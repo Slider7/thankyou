@@ -183,8 +183,8 @@
               window.h = 0;
 
               resizeWindow = function() {
-              window.w = canvas.width = window.innerWidth-20;
-              return window.h = canvas.height = window.innerHeight-20;
+              window.w = canvas.width = window.innerWidth;
+              return window.h = canvas.height = window.innerHeight-1;
               };
 
               window.addEventListener('resize', resizeWindow, false);
