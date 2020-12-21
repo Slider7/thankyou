@@ -115,7 +115,7 @@
 		  }
 		}
 
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: 768px) and (min-width: 1023px) {
 	  		.wrapper {
 			  width: 750px;
 			  margin-left: -375px;
@@ -142,6 +142,35 @@
 			}
 
 		}
+
+		@media screen and (max-height: 768px){
+	  		.wrapper {
+			  width: 750px;
+			  margin-left: -375px;
+			  font: 300 30px/1 'Open Sans Condensed', sans-serif;
+			  text-align: center;
+			  color: aliceblue;
+			  animation: 20s credits linear;
+			  animation-fill-mode: forwards;
+	  		  color: aliceblue;
+			}
+
+			.mentor {
+			  margin-bottom: 5px;
+			  font-size: 30px;
+			  text-transform: uppercase;
+			}
+
+			.job-name {
+			  margin-bottom: 32px;
+			  font-size: 22px;
+			}
+			.job-extra{
+				display: block;
+			}
+
+		}
+
 
     </style>
 
