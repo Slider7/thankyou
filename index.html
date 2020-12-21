@@ -10,15 +10,16 @@
     <style type="text/css">
     	.ml4 {
 		  position: relative;
-		  font-weight: 700;
+		  font-weight: 600;
 		  font-size: 3.0em;
-		  margin-bottom: 90px;
+		  margin-top: 45vh;
+		  margin-bottom: 95px;
+		  visibility: hidden;
 		}
 		.ml4 .letters {
 		  font-family: sans-serif;
 		  position: absolute;
 		  margin: auto;
-		  margin-top: 12px;
 		  left: 0;
 		  top: 0.3em;
 		  right: 0;
@@ -39,10 +40,6 @@
 			margin: auto 0;
 		}
 
-		.greetings-text{
-			color: aliceblue;
-			font-size: 1.5rem;
-		}
 		
 		hr{
 			width: 80vw;
@@ -66,20 +63,23 @@
 
 		.wrapper {
 		  position: absolute;
-		  top: 370%;
+		  top: 200%;
 		  left: 50%;
 		  width: 360px;
 		  margin-left: -180px;
 		  font: 300 30px/1 'Open Sans Condensed', sans-serif;
 		  text-align: center;
 		  color: aliceblue;
-		  animation: 15s credits linear;
+		  animation: 20s credits linear;
 		  animation-fill-mode: forwards;
+  		  color: aliceblue;
+  		  scroll-behavior: auto;
 		}
 
 		.greet {
 		  margin-bottom: 25px;
 		  font-size: 32px;
+		  text-transform: uppercase;
 		}
 
 		.mentor {
@@ -93,14 +93,56 @@
 		  font-size: 18px;
 		}
 
+		.job-extra{
+				display: none;
+		}
+
 		@keyframes credits {
 		  0% {
-		    top: 350%;
+		    top: 300%;
 		  }
 		  100% {
-		    top: 95%;
+		    top: -400%;
 		  }
 		}
+
+		@keyframes credits2 {
+		  0% {
+		    top: 200%;
+		  }
+		  100% {
+		    top: -200%;
+		  }
+		}
+
+		@media screen and (min-width: 768px) {
+	  		.wrapper {
+			  width: 750px;
+			  margin-left: -375px;
+			  font: 300 30px/1 'Open Sans Condensed', sans-serif;
+			  text-align: center;
+			  color: aliceblue;
+			  animation: 20s credits2 linear;
+			  animation-fill-mode: forwards;
+	  		  color: aliceblue;
+			}
+
+			.mentor {
+			  margin-bottom: 5px;
+			  font-size: 30px;
+			  text-transform: uppercase;
+			}
+
+			.job-name {
+			  margin-bottom: 32px;
+			  font-size: 22px;
+			}
+			.job-extra{
+				display: block;
+			}
+
+		}
+
     </style>
 
   </head>
@@ -110,44 +152,44 @@
     <!--Для конфетти----------------->
     <canvas id="world"></canvas>
     <!------------------------------->
-  <div id="overlay" class="container-fluid">
-  		<h1 class="ml4">
-		  <span class="letters letters-1">Менторы!</span>
-		  <span class="letters letters-2">Спасибо Вам!</span>
-		  <span class="letters letters-3">Вы - лучшие!</span>
-		</h1>
+  <div id="overlay" class="container">
+	  		<h1 class="ml4">
+			  <span class="letters letters-1">Менторы!</span>
+			  <span class="letters letters-2">Спасибо Вам!</span>
+			  <span class="letters letters-3">Вы - лучшие!</span>
+			</h1>
 
-		<hr />
-
- 		<div class="greetings-text">
+			<div class='greets'>
 			<div class='wrapper'>
 				<div class='greet'>Благодарности:</div>
 					<div class='mentor'>Владимир Токарев</div>
 					<div class='job-name'>Лекции, лайвкодинг, полезные советы и юмор</div>
+					<div class='job-extra'></div>
 					<div class='mentor'>Нелли Кебирова</div>
-					<div class='job-name'>Лекции, море рекомендаций, код-ревью и бесконечное терпение</div>
+					<div class='job-name'>Лекции, код-ревью, море рекомендаций и бесконечное терпение</div>
+					<div class='job-extra'></div>
 					<div class='mentor'>Алихан Бакытбек</div>
-					<div class='job-name'>Лекции, лайвкодинг, полезные советы, код-ревью</div>
+					<div class='job-name'>Лекции, лайвкодинг, полезнейшие консультации, код-ревью</div>
+					<div class='job-extra'></div>
 					<div class='mentor'>Мадияр Курмангалиев</div>
 					<div class='job-name'>Код-ревью, бесценные подсказки и советы</div>
+					<div class='job-extra'></div>
 					<div class='mentor'>Асхат Жангирбаев</div>
 					<div class='job-name'>Код-ревью, бесценные подсказки и советы</div>
-					<div class='mentor'></div>
-					<div class='job-name'></div>
-					<div class='mentor'></div>
-					<div class='job-name'></div>
-					<div class='mentor'></div>
-					<div class='job-name'></div>
-					<div class='mentor'></div>
-					<div class='job-name'></div>
-					<div class='mentor'></div>
-					<div class='job-name'></div>
-					<div class='mentor'></div>
+					<div class='job-extra'></div>
+					<div class='mentor'>Ирина Губина</div>
+					<div class='job-name'>Поддержка, мотивация, лекции, организация процесса, неиссякаемый оптимизм</div>
+					<div class='mentor'>Малика Бутина</div>
+					<div class='job-name'>Поддержка, лекции, организация процесса и проведение интервью</div>
+					<div class='mentor'>Абай Жантлеуов</div>
+					<div class='job-name'>Изящный, аутентичный дизайн, оперативное внесение изменений. А еще там есть астронавт)</div>
+					<div class='mentor'>&nbsp</div>
+					<div class='mentor'>&nbsp</div>
+					<div class='mentor'>&nbsp</div>
+					<div class='mentor'>Всем причастным к kolesa upgrade:</div>
+					<div class='job-name'>Спасибо Вам за все!</div>
 				</div>
 			</div>
-
-
-		</div>
 
   </div>
 
@@ -160,6 +202,11 @@
 
     <script type="text/javascript">
 
+    	setTimeout(()=>{showFinalGreet()}, 20000);
+
+    	function showFinalGreet(){
+    		document.querySelector(".ml4").style.visibility = "visible";
+    	}
       /*---------------C O N F E T T I-----------------------------------*/
         var mode = 1;
         function on_off(){
@@ -295,7 +342,7 @@
 		ml4.scaleIn = [0.2, 1];
 		ml4.scaleOut = 3;
 		ml4.durationIn = 1500;
-		ml4.durationOut = 900;
+		ml4.durationOut = 800;
 		ml4.delay = 1500;
 
 		anime.timeline({loop: true})
